@@ -117,6 +117,7 @@
       display: inline-block;
       padding: 0.85rem 2.4rem;
       border: 2px solid var(--mint);
+      border-radius: 4px;
       background: var(--mint);
       color: var(--ink);
       font-family: 'Lato', sans-serif;
@@ -202,6 +203,72 @@
       margin: 0 auto 1.5rem;
     }
 
+    /* ── LOCATION & HOURS ── */
+    .location {
+      background: #f5f5f5;
+      padding: 3.5rem 2rem;
+      max-width: 100%;
+    }
+
+    .location-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--ink);
+      max-width: 860px;
+      margin: 0 auto 1rem;
+      padding: 0 1rem;
+    }
+
+    .location-rule {
+      border: none;
+      border-top: 1px solid #ccc;
+      max-width: 860px;
+      margin: 0 auto 2rem;
+    }
+
+    .location-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      max-width: 860px;
+      margin: 0 auto 1.25rem;
+      padding: 0 1rem;
+    }
+
+    .location-address {
+      font-size: 1.05rem;
+      color: #444;
+      max-width: 860px;
+      margin: 0 auto 1.5rem;
+      padding: 0 1rem;
+    }
+
+    .location-contact {
+      font-size: 1rem;
+      max-width: 860px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+      line-height: 1.9;
+    }
+
+    .location-contact a {
+      color: #5a8a83;
+      text-decoration: none;
+    }
+
+    .location-contact a:hover { text-decoration: underline; }
+
+    .location-hours {
+      font-size: 1rem;
+      color: var(--ink);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      line-height: 2;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--mint);
@@ -252,44 +319,30 @@
     </div>
   </section>
 
-  <!-- INFO STRIP -->
-  <div class="info-strip">
-    <div class="info-item">
-      <!-- cake icon -->
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-      Bakery
-    </div>
-    <div class="info-item">
-      <!-- utensils icon -->
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-      Catering
-    </div>
-    <div class="info-item">
-      <!-- coffee icon -->
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
-      Specialty Drinks
-    </div>
-    <div class="info-item">
-      <!-- map pin icon -->
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      Concord, MA
-    </div>
-  </div>
-
   <!-- ABOUT -->
   <section class="about" id="about">
     <hr class="section-divider" />
-    <h2>Baked with Love in Concord</h2>
     <p>
-      From custom celebration cakes to daily pastries and specialty espresso drinks,
-      Concord Teacakes has been the heart of sweet moments in Concord, MA.
-      Everything is made fresh, in-house, and with the finest ingredients.
-    </p>
-    <p>
-      Ready to place an order? Head to our online ordering site to browse our
-      full menu of cakes, pastries, and catering options.
+ Our West Concord cafe offers an array of delicious cupcakes, cookies, and custom cakes, along with full catering services for your next event.
     </p>
     <a href="https://order.toasttab.com/online/concord-teacakes" id="order-link-about" target="_blank" rel="noopener" class="btn-order-teal">Order Online Now</a>
+  </section>
+
+  <!-- LOCATION & HOURS -->
+  <section class="location" id="location">
+    <h2 class="location-title">Concord Teacakes</h2>
+    <hr class="location-rule" />
+    <h3 class="location-heading">Location &amp; Hours</h3>
+    <p class="location-address">59 Commonwealth Ave. Concord, MA 01742</p>
+    <p class="location-contact">
+      <a href="tel:+19783697644">(978) 369-7644</a><br />
+      <a href="mailto:bakery@concordteacakes.com">bakery@concordteacakes.com</a>
+    </p>
+    <h3 class="location-heading">Hours</h3>
+    <p class="location-hours">
+      <strong>Monday - Saturday:</strong> 7:00 AM–5:00 PM<br />
+      <strong>Sunday:</strong> 8:00 AM–2:00 PM
+    </p>
   </section>
 
   <!-- FOOTER -->
