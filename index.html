@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concord Teacakes | Bakery · Catering · Specialty Drinks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --mint:     #c6e8e3;
+      --teal:     #1e5c52;
+      --teal-dark:#154036;
+      --white:    #ffffff;
+      --ink:      #1a1a1a;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--ink);
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--mint);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--ink);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .logo svg {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 2px;
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    nav a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--teal); }
+    nav a.active { text-decoration: underline; text-underline-offset: 4px; }
+
+    .nav-right a {
+      font-weight: 400;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: calc(100vh - 90px);
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 55, 48, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 400;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.2;
+      max-width: 720px;
+    }
+
+    .hero-divider {
+      width: 260px;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.65);
+    }
+
+    .btn-order {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      border: 2px solid var(--white);
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+      transition: background 0.25s, color 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-order:hover {
+      background: var(--white);
+      color: var(--teal-dark);
+    }
+
+    /* ── INFO STRIP ── */
+    .info-strip {
+      background: var(--teal);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 1.25rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .info-item svg { opacity: 0.85; flex-shrink: 0; }
+
+    /* ── ABOUT SECTION ── */
+    .about {
+      max-width: 700px;
+      margin: 4.5rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--teal-dark);
+    }
+
+    .about p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .about .btn-order-teal {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.25s;
+    }
+
+    .about .btn-order-teal:hover { background: var(--teal-dark); }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      width: 60px;
+      border: none;
+      border-top: 2px solid var(--mint);
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--mint);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.82rem;
+      color: #444;
+      letter-spacing: 0.03em;
+    }
+
+    footer strong { color: var(--teal-dark); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header { padding: 0 1rem; }
+      .nav-left, .nav-right { display: none; }
+      .logo { position: static; transform: none; }
+      header { justify-content: center; }
+      .info-strip { gap: 1.25rem; flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav-left">
+      <a href="#" class="active">Home</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a href="#" class="logo" aria-label="Concord Teacakes home">
+      <!-- Tiered cake SVG matching site logo style -->
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#1a1a1a">
+          <!-- Top tier -->
+          <rect x="30" y="10" width="20" height="10" rx="2"/>
+          <rect x="28" y="19" width="24" height="3" rx="1"/>
+          <!-- Middle tier -->
+          <rect x="20" y="22" width="40" height="12" rx="2"/>
+          <rect x="18" y="33" width="44" height="3" rx="1"/>
+          <!-- Bottom tier -->
+          <rect x="10" y="36" width="60" height="14" rx="2"/>
+          <rect x="8" y="49" width="64" height="3" rx="1"/>
+          <!-- Base plate -->
+          <rect x="6" y="52" width="68" height="4" rx="2"/>
+          <!-- Candle -->
+          <rect x="38" y="4" width="4" height="7" rx="1"/>
+          <ellipse cx="40" cy="3" rx="2.5" ry="3" fill="#1a1a1a" opacity="0.7"/>
+          <!-- Decorative dots on middle tier -->
+          <circle cx="30" cy="28" r="2"/>
+          <circle cx="40" cy="28" r="2"/>
+          <circle cx="50" cy="28" r="2"/>
+          <!-- Decorative dots on bottom tier -->
+          <circle cx="24" cy="43" r="2"/>
+          <circle cx="34" cy="43" r="2"/>
+          <circle cx="44" cy="43" r="2"/>
+          <circle cx="56" cy="43" r="2"/>
+        </g>
+      </svg>
+      <span class="logo-name">Concord Teacakes</span>
+    </a>
+
+    <nav class="nav-right">
+      <a href="https://order.toasttab.com/online/concord-teacakes" id="order-link-nav" target="_blank" rel="noopener">Order Online</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-img" src="storefront.jpg" alt="Concord Teacakes storefront in Concord, MA" />
+    <div class="hero-overlay">
+      <h1 class="hero-title">Welcome to<br>Concord Teacakes</h1>
+      <hr class="hero-divider" />
+      <a href="https://order.toasttab.com/online/concord-teacakes" id="order-link-hero" target="_blank" rel="noopener" class="btn-order">Order Online</a>
+    </div>
+  </section>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-item">
+      <!-- cake icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+      Bakery
+    </div>
+    <div class="info-item">
+      <!-- utensils icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+      Catering
+    </div>
+    <div class="info-item">
+      <!-- coffee icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
+      Specialty Drinks
+    </div>
+    <div class="info-item">
+      <!-- map pin icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Concord, MA
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <hr class="section-divider" />
+    <h2>Baked with Love in Concord</h2>
+    <p>
+      From custom celebration cakes to daily pastries and specialty espresso drinks,
+      Concord Teacakes has been the heart of sweet moments in Concord, MA.
+      Everything is made fresh, in-house, and with the finest ingredients.
+    </p>
+    <p>
+      Ready to place an order? Head to our online ordering site to browse our
+      full menu of cakes, pastries, and catering options.
+    </p>
+    <a href="https://order.toasttab.com/online/concord-teacakes" id="order-link-about" target="_blank" rel="noopener" class="btn-order-teal">Order Online Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Concord Teacakes</strong> &nbsp;·&nbsp; Concord, MA &nbsp;·&nbsp; Bakery · Catering · Specialty Drinks</p>
+    <p style="margin-top:0.5rem;">&copy; <span id="year"></span> Concord Teacakes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
